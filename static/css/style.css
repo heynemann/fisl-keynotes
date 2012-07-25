@@ -63,6 +63,19 @@ header h1.logo-fisl a {
     text-indent: -9999px;
 }
 
+header p a {
+    float: left;
+    margin-top: 20px;
+    margin-left: 188px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+header p a:hover {
+    text-decoration: underline;
+}
+
 .body .container {
     padding: 60px 20px 0 20px;
 }
