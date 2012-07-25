@@ -7,8 +7,6 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
-app.url_for('static', filename='style.css')
-
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
