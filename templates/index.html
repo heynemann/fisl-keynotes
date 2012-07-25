@@ -18,7 +18,23 @@
     </header>
     <div class="body">
         <div class="container">
-        lorem ipsum dolor sit amet
+            <div class="talks">
+                {% macro talk(title, author, room, time, img) -%}
+                <div class="talk">
+                    <div class="img">
+                        <img src="{{ img }}" alt="{{ title }}" />
+                    </div>
+                    <div class="info">
+                        <h2>{{ title }}</h2>
+                        <h3>{{ author }}</h3>
+                        <div class="location">
+                            <p class="room">{{ room }}</p>
+                            <p class="time">{{ time }}</p>
+                        </div>
+                    </div>
+                </div>
+                {%- endmacro %}
+            </div>
         </div>
     </div>
     <footer>
