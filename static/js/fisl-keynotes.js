@@ -17,4 +17,8 @@ $(function() {
     };
     jQuery.timeago.settings.allowFuture = true;
     $('.talks .talk .info .location .time').timeago();
+
+    $('.talks .talk').click(function(ev) {
+        $(this).toggleClass('current');
+    });
 });
