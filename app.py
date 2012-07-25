@@ -1,11 +1,12 @@
 import os
 from flask import Flask, render_template
+from fisl_keynotes.datasource import GlobaisTalks
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    return render_template('index.html', talks=GlobaisTalks().all_talks())
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.

@@ -22,7 +22,7 @@
                 {% macro talk(title, author, room, time, img) -%}
                 <div class="talk">
                     <div class="img">
-                        <img src="{{ img }}" alt="{{ title }}" />
+                        <img width="115" height="115" src="{{ img }}" alt="{{ title }}" />
                     </div>
                     <div class="info">
                         <h2>{{ title }}</h2>
@@ -34,6 +34,10 @@
                     </div>
                 </div>
                 {%- endmacro %}
+
+                {% for t in talks %}
+                    {{ talk(t.title, t.author.name, t.room.name, t.date, t.author.gravatar) }}
+                {% endfor %}
             </div>
         </div>
     </div>

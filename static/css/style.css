@@ -66,3 +66,73 @@ header h1.logo-fisl a {
 .body .container {
     padding: 60px 20px 0 20px;
 }
+
+.talks .talk {
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.talks .talk .img {
+    float: left;
+    width: 143px;
+}
+
+.talks .talk .info {
+    float: left;
+    width: 777px;
+}
+
+.talks .talk .info h2 {
+    color: #1f5ec7;
+    font-size: 30px;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.talks .talk .info h3 {
+    color: #999;
+    font-size: 24px;
+    text-align: right;
+    padding-bottom: 15px;
+    border-bottom: solid 1px #eee;
+}
+
+.talks .talk .info .location {
+    padding-top: 15px;
+    border-top: solid 1px #ddd;
+}
+
+.talks .talk .info .location .room {
+    float: left;
+}
+
+.talks .talk .info .location .time {
+    float: right;
+}
+
+.talks .talk .info .location .time,
+.talks .talk .info .location .room {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer a {
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
