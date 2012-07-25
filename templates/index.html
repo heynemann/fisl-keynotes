@@ -29,14 +29,14 @@
                         <h3>{{ author }}</h3>
                         <div class="location">
                             <p class="room">{{ room }}</p>
-                            <p class="time">{{ time }}</p>
+                            <p class="time" title="{{ time }}">{{ time }}</p>
                         </div>
                     </div>
                 </div>
                 {%- endmacro %}
 
                 {% for t in talks %}
-                    {{ talk(t.title, t.author.name, t.room.name, t.date, t.author.gravatar) }}
+                    {{ talk(t.title, t.author.name, t.room.name, t.date.isoformat(), t.author.gravatar) }}
                 {% endfor %}
             </div>
         </div>
@@ -49,6 +49,7 @@
 
     {% block js %}
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.7.2.min.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/timeago.js') }}" charset="utf-8"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/fisl-keynotes.js') }}" charset="utf-8"></script>
     {% endblock %}
 </body>
