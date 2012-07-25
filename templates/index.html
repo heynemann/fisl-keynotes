@@ -21,6 +21,7 @@
             <div class="talks">
                 {% macro talk(title, author, room, time, img) -%}
                 <div class="talk">
+                    <div class="border"></div>
                     <div class="img">
                         <img width="115" height="115" src="{{ img }}" alt="{{ title }}" />
                     </div>
@@ -29,6 +30,7 @@
                         <h3>{{ author }}</h3>
                         <div class="location">
                             <p class="room">{{ room }}</p>
+                            <p class="now">AGORA!!!</p>
                             <p class="time" title="{{ time }}">{{ time }}</p>
                         </div>
                     </div>

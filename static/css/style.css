@@ -67,19 +67,71 @@ header h1.logo-fisl a {
     padding: 60px 20px 0 20px;
 }
 
+.talks {
+    position: relative;
+}
+
 .talks .talk {
-    overflow: hidden;
     margin-bottom: 80px;
+    position: relative;
+    height: 115px;
+}
+
+.talks .talk.current {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 1000px;
+}
+
+.talks .talk.current + .talk {
+    padding-top: 220px;
+}
+
+.talks .talk .border {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 1052px;
+    height: 195px;
+    top: -28px;
+    left: -28px;
+
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: solid 1px #ccc;
+
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f9f9f9 8%, #e9e9e9 20%, #e3e3e3 28%, #e3e3e3 37%, #e8e8e8 53%, #f6f6f6 77%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(8%,#f9f9f9), color-stop(20%,#e9e9e9), color-stop(28%,#e3e3e3), color-stop(37%,#e3e3e3), color-stop(53%,#e8e8e8), color-stop(77%,#f6f6f6), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f9f9f9 8%,#e9e9e9 20%,#e3e3e3 28%,#e3e3e3 37%,#e8e8e8 53%,#f6f6f6 77%,#ffffff 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#f9f9f9 8%,#e9e9e9 20%,#e3e3e3 28%,#e3e3e3 37%,#e8e8e8 53%,#f6f6f6 77%,#ffffff 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f9f9f9 8%,#e9e9e9 20%,#e3e3e3 28%,#e3e3e3 37%,#e8e8e8 53%,#f6f6f6 77%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #ffffff 0%,#f9f9f9 8%,#e9e9e9 20%,#e3e3e3 28%,#e3e3e3 37%,#e8e8e8 53%,#f6f6f6 77%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+
+.talks .talk.current .border {
+    display: block;
 }
 
 .talks .talk .img {
+    position: relative;
+    z-index: 2;
     float: left;
     width: 143px;
 }
 
 .talks .talk .info {
+    position: relative;
+    z-index: 2;
     float: left;
     width: 777px;
+}
+
+.talks .talk.current .info {
+    width: 850px;
 }
 
 .talks .talk .info h2 {
@@ -93,6 +145,10 @@ header h1.logo-fisl a {
     text-align: right;
 }
 
+.talks .talk.current .info h2 {
+    font-size: 42px;
+}
+
 .talks .talk .info h3 {
     color: #999;
     font-size: 24px;
@@ -101,9 +157,18 @@ header h1.logo-fisl a {
     border-bottom: solid 1px #eee;
 }
 
+.talks .talk.current .info h3 {
+    font-size: 32px;
+    border-bottom: solid 1px #666;
+}
+
 .talks .talk .info .location {
     padding-top: 15px;
     border-top: solid 1px #ddd;
+}
+
+.talks .talk.current .info .location {
+    border-top: solid 1px #555;
 }
 
 .talks .talk .info .location .room {
@@ -114,11 +179,31 @@ header h1.logo-fisl a {
     float: right;
 }
 
+.talks .talk .info .location .now {
+    float: right;
+    display: none;
+}
+
+.talks .talk.current .info .location .time {
+    display: none;
+}
+
+.talks .talk.current .info .location .now {
+    display: block;
+}
+
 .talks .talk .info .location .time,
+.talks .talk .info .location .now,
 .talks .talk .info .location .room {
     font-size: 30px;
     font-weight: bold;
     color: #333;
+}
+
+.talks .talk.current .info .location .time,
+.talks .talk.current .info .location .now,
+.talks .talk.current .info .location .room {
+    font-size: 42px;
 }
 
 footer {
