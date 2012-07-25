@@ -79,9 +79,9 @@ header h1.logo-fisl a {
 
 .talks .talk.current {
     position: absolute;
-    left: -40px;
+    left: -13px;
     top: 0;
-    width: 1000px;
+    width: 970px;
 }
 
 .talks .talk.current + .talk {
@@ -92,7 +92,7 @@ header h1.logo-fisl a {
     display: none;
     z-index: 1;
     position: absolute;
-    width: 1052px;
+    width: 1000px;
     height: 195px;
     top: -28px;
     left: -28px;
@@ -131,7 +131,7 @@ header h1.logo-fisl a {
 }
 
 .talks .talk.current .info {
-    width: 850px;
+    width: 805px;
 }
 
 .talks .talk .info h2 {
