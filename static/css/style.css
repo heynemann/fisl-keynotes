@@ -82,26 +82,32 @@ header p a:hover {
 
 .talks {
     position: relative;
+    height: 542px;
+    overflow: scroll;
 }
 
-.talks .talk {
+.current-talks {
+    position: relative;
+}
+
+.talk {
     margin-bottom: 80px;
     position: relative;
     height: 115px;
 }
 
-.talks .talk.current {
+.talk.current {
     position: absolute;
     left: -13px;
     top: 0;
     width: 970px;
 }
 
-.talks .talk.current + .talk {
-    padding-top: 220px;
+.talks.has-current {
+    margin-top: 220px;
 }
 
-.talks .talk .border {
+.talk .border {
     display: none;
     z-index: 1;
     position: absolute;
@@ -125,29 +131,29 @@ header p a:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
 
-.talks .talk.current .border {
+.talk.current .border {
     display: block;
 }
 
-.talks .talk .img {
+.talk .img {
     position: relative;
     z-index: 2;
     float: left;
     width: 143px;
 }
 
-.talks .talk .info {
+.talk .info {
     position: relative;
     z-index: 2;
     float: left;
     width: 777px;
 }
 
-.talks .talk.current .info {
+.talk.current .info {
     width: 805px;
 }
 
-.talks .talk .info h2 {
+.talk .info h2 {
     color: #1f5ec7;
     font-size: 30px;
     text-overflow: ellipsis;
@@ -158,11 +164,11 @@ header p a:hover {
     text-align: right;
 }
 
-.talks .talk.current .info h2 {
+.talk.current .info h2 {
     font-size: 42px;
 }
 
-.talks .talk .info h3 {
+.talk .info h3 {
     color: #999;
     font-size: 24px;
     text-align: right;
@@ -170,52 +176,52 @@ header p a:hover {
     border-bottom: solid 1px #eee;
 }
 
-.talks .talk.current .info h3 {
+.talk.current .info h3 {
     font-size: 32px;
     border-bottom: solid 1px #666;
 }
 
-.talks .talk .info .location {
+.talk .info .location {
     padding-top: 15px;
     border-top: solid 1px #ddd;
 }
 
-.talks .talk.current .info .location {
+.talk.current .info .location {
     border-top: solid 1px #555;
 }
 
-.talks .talk .info .location .room {
+.talk .info .location .room {
     float: left;
 }
 
-.talks .talk .info .location .time {
+.talk .info .location .time {
     float: right;
 }
 
-.talks .talk .info .location .now {
+.talk .info .location .now {
     float: right;
     display: none;
 }
 
-.talks .talk.current .info .location .time {
+.talk.current .info .location .time {
     display: none;
 }
 
-.talks .talk.current .info .location .now {
+.talk.current .info .location .now {
     display: block;
 }
 
-.talks .talk .info .location .time,
-.talks .talk .info .location .now,
-.talks .talk .info .location .room {
+.talk .info .location .time,
+.talk .info .location .now,
+.talk .info .location .room {
     font-size: 30px;
     font-weight: bold;
     color: #333;
 }
 
-.talks .talk.current .info .location .time,
-.talks .talk.current .info .location .now,
-.talks .talk.current .info .location .room {
+.talk.current .info .location .time,
+.talk.current .info .location .now,
+.talk.current .info .location .room {
     font-size: 42px;
 }
 

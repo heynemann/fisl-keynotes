@@ -18,7 +18,31 @@ $(function() {
     jQuery.timeago.settings.allowFuture = true;
     $('.talks .talk .info .location .time').timeago();
 
+    var talks = $('.talks');
+    var currTalks = $('.current-talks');
+
     $('.talks .talk').click(function(ev) {
-        $(this).toggleClass('current');
+        if ($(this).is('.current')) {
+            talks.removeClass('has-current');
+            $(this).toggleClass('current').detach().prependTo(talks);
+        } else {
+            talks.addClass('has-current');
+            $(this).toggleClass('current').detach().appendTo(currTalks);
+        }
     });
+
+    window.setTimeout(function() {
+        $('.talks').autoscroll({
+            direction: "down", 
+            step: 50, 
+            delay: 5000,
+            speed: "fast",
+            scroll: true,
+            onEdge: function (edge) { 
+                $(this).autoscroll('pause');
+                $(this).autoscroll('reverse');
+                $(this).autoscroll('resume');
+            }
+        });
+    }, 5000);
 });
