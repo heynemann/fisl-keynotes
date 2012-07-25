@@ -1,0 +1,68 @@
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: arial;
+}
+
+header,
+.container {
+    width: 920px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+header {
+    padding: 20px;
+    height: 131px;
+    border-bottom: solid 1px #ccc;
+}
+
+header h1.logo-globo {
+    margin-top: 15px;
+    float: left;
+}
+
+header h1.logo-globo a {
+    background: url('../img/logo.png') 0 -72px no-repeat;
+    width: 122px;
+    height: 72px;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+header h1.logo-globo a:hover {
+    background: url('../img/logo.png') 0 -1px no-repeat;
+}
+
+header h1.nossas-palestras {
+    float: left;
+    margin-left: 129px;
+    margin-top: 35px;
+
+    background: url('../img/nossaspalestras.png') 0 0 no-repeat;
+    width: 438px;
+    height: 35px;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+header h1.logo-fisl {
+    float: right;
+}
+
+header h1.logo-fisl a {
+    background: url('../img/logofisl.png') 0 0 no-repeat;
+    width: 103px;
+    height: 103px;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.body .container {
+    padding: 60px 20px 0 20px;
+}
