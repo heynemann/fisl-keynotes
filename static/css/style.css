@@ -84,7 +84,7 @@ header p a:hover {
     position: relative;
     height: 542px;
     width: 964px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .current-talks {
