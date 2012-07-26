@@ -82,6 +82,7 @@ header p a:hover {
 
 .talks {
     position: relative;
+    padding-top: 35px;
     height: 542px;
     width: 964px;
     overflow: hidden;
