@@ -107,16 +107,21 @@ class GlobaisTalks(object):
 
         estande = Room(name='Estande Globo.com')
         lightning_talks = [
-                Talk(person=Person(name='Demetrius',
-                    email="demetrius.nunes@corp.globo.com"),
+                Talk(person=Person(name=u'Diego Manhães',
+                    email="diego@dmpinheiro.net"),
                     room=estande,
-                    title=u"Opensource é irresistível",
-                    date=datetime.datetime(2012,7,26,16,00,00)),
-                Talk(person=Person(name='Bernardo Heynemann',
-                    email="heynemann@gmail.com"),
+                    title=u"Otimização de aplicativos em Python",
+                    date=datetime.datetime(2012,7,27,12,00,00)),
+                Talk(person=Person(name=u'Leonardo Mello',
+                    email="leonardo.rodrigues@corp.globo.com"),
                     room=estande,
-                    title=u"Opensource com Thumbor",
-                    date=datetime.datetime(2012,7,26,17,00,00))
+                    title=u"Automatização de setup e gerenciamento de servidores",
+                    date=datetime.datetime(2012,7,27,16,00,00)),
+                Talk(person=Person(name='Colin Saliceti',
+                    email="colin@corp.globo.com"),
+                    room=estande,
+                    title=u"Hot Deploy - Serviço contínuo",
+                    date=datetime.datetime(2012,7,27,17,00,00)),
                 ]
         global_talks = []
 
