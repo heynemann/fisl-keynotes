@@ -105,7 +105,7 @@ header p a:hover {
 }
 
 .talks.has-current {
-    margin-top: 220px;
+	margin-top: 140px;
 }
 
 .talk .border {
@@ -133,7 +133,6 @@ header p a:hover {
 }
 
 .talk.current .border {
-    display: block;
 }
 
 .talk .img {
@@ -145,10 +144,6 @@ header p a:hover {
 
 .talk .info {
     position: relative;
-}
-
-.talk.current .info {
-    width: 805px;
 }
 
 .talk .info h2 {
@@ -199,6 +194,7 @@ header p a:hover {
 .talk .info .location .now {
     float: right;
     display: none;
+    margin-right: 14px;
 }
 
 .talk.current .info .location .time {
@@ -207,6 +203,7 @@ header p a:hover {
 
 .talk.current .info .location .now {
     display: block;
+
 }
 
 .talk .info .location .time,
@@ -220,7 +217,7 @@ header p a:hover {
 .talk.current .info .location .time,
 .talk.current .info .location .now,
 .talk.current .info .location .room {
-    font-size: 42px;
+    font-size: 27px;
 }
 
 footer {
@@ -244,3 +241,6 @@ footer a:hover {
     margin-top: -28px;
 }
 
+.talk.current img {
+	 margin-top: -7px;
+}
