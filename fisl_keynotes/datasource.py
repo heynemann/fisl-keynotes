@@ -44,9 +44,13 @@ class FislConference(object):
 
 
 class Person(object):
-    def __init__(self, xml_element):
-        self.name = unescape(xml_element.get('name'))
-        self.candidate = unescape(xml_element.get('candidate'))
+    def __init__(self, xml_element=None, email=None, name=None):
+        if xml_element is not None:
+            self.name = unescape(xml_element.get('name'))
+            self.candidate = unescape(xml_element.get('candidate'))
+        else:
+            self.email = email
+            self.name = name
 
     @property
     def gravatar(self):
@@ -58,23 +62,32 @@ class Person(object):
 
 
 class Talk(object):
-    def __init__(self, xml_element):
-        self.candidate = unescape(xml_element.get('candidate'))
-        self.title = unescape(xml_element.get('title'))
-        self.abstract = unescape(xml_element.get('abstract'))
-        self.date = datetime.datetime.strptime('%s%s%s' % (
-                                                  xml_element.get('date'),
-                                                  xml_element.get('hour'),
-                                                  xml_element.get('minute')),
-                                      '%Y-%m-%d%H%M')
-        self.room_id = xml_element.get('room')
+    def __init__(self, xml_element=None, person=None, room=None, date=None, title=None):
+        if xml_element is not None:
+            self.candidate = unescape(xml_element.get('candidate'))
+            self.title = unescape(xml_element.get('title'))
+            self.abstract = unescape(xml_element.get('abstract'))
+            self.date = datetime.datetime.strptime('%s%s%s' % (
+                                                      xml_element.get('date'),
+                                                      xml_element.get('hour'),
+                                                      xml_element.get('minute')),
+                                          '%Y-%m-%d%H%M')
+            self.room_id = xml_element.get('room')
 
+        else:
+            self.author = person
+            self.room = room
+            self.title = title
+            self.date = date 
 
 class Room(object):
-    def __init__(self, xml_element):
-        self.id = xml_element.get('id')
-        self.capacity = xml_element.find('capacity').text
-        self.name = unescape(xml_element.find('name').text)
+    def __init__(self, xml_element=None, name=None):
+        if xml_element is not None:
+            self.id = xml_element.get('id')
+            self.capacity = xml_element.find('capacity').text
+            self.name = unescape(xml_element.find('name').text)
+        else:
+            self.name = name
 
 class GlobaisTalks(object):
 
@@ -92,14 +105,28 @@ class GlobaisTalks(object):
                 ('Juarez', 'juarez.bochi@corp.globo.com'),
                 ('motta', 'tiago.motta@corp.globo.com')]
 
+        estande = Room(name='Estande Globo.com')
+        lightning_talks = [
+                Talk(person=Person(name='Demetrius',
+                    email="demetrius.nunes@corp.globo.com"),
+                    room=estande,
+                    title=u"Opensource é irresistível",
+                    date=datetime.datetime(2012,7,26,16,00,00)),
+                Talk(person=Person(name='Bernardo Heynemann',
+                    email="heynemann@gmail.com"),
+                    room=estande,
+                    title=u"Opensource com Thumbor",
+                    date=datetime.datetime(2012,7,26,17,00,00))
+                ]
         global_talks = []
 
         for glb in globais:
             for person in fisl.find_person_by_name(*glb):
                 for t in fisl.find_talks_by_person(person):
-                    t.author =  person
+                    t.author = person
                     global_talks.append(t)
 
+        global_talks.extend(lightning_talks)
         global_talks = sorted(global_talks, key=lambda item: item.date)
         return global_talks
 
@@ -117,12 +144,13 @@ if __name__ == '__main__':
             ('Juarez', 'juarez.bochi@corp.globo.com'),
             ('motta', 'tiago.motta@corp.globo.com')]
 
+
     global_talks = []
 
     for glb in globais:
         for person in fisl.find_person_by_name(*glb):
             for t in fisl.find_talks_by_person(person):
-                t.author =  person
+                t.author = person
                 global_talks.append(t)
 
     global_talks = sorted(global_talks, key=lambda item: item.date)
@@ -133,4 +161,6 @@ if __name__ == '__main__':
         print t.date
         print t.room.name
         print '-' * 20
+
+
 
