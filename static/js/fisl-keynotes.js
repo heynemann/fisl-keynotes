@@ -31,17 +31,26 @@ $(function() {
         }
     });
 
+    var top = false;
     window.setTimeout(function() {
         $('.talks').autoscroll({
             direction: "down", 
-            step: 50, 
+            step: 20, 
             delay: 5000,
             speed: "fast",
             scroll: true,
             onEdge: function (edge) { 
-                $(this).autoscroll('pause');
-                $(this).autoscroll('reverse');
-                $(this).autoscroll('resume');
+                var element = $(this);
+                element.autoscroll('pause');
+                element.autoscroll('reverse');
+                if (top) {
+                    window.setTimeout(function() {
+                        element.autoscroll('resume');
+                    }, 5000);
+                } else {
+                    element.autoscroll('resume');
+                }
+                top = !top;
             }
         });
     }, 5000);
