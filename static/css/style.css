@@ -145,9 +145,6 @@ header p a:hover {
 
 .talk .info {
     position: relative;
-    z-index: 2;
-    float: left;
-    width: 777px;
 }
 
 .talk.current .info {
@@ -156,25 +153,26 @@ header p a:hover {
 
 .talk .info h2 {
     color: #1f5ec7;
-    font-size: 30px;
+    font-size: 35px;
     text-overflow: ellipsis;
     width: 100%;
-    overflow: hidden;
     white-space: nowrap;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: right;
+    margin-bottom: 10px;
 }
 
 .talk.current .info h2 {
     font-size: 42px;
+    margin-bottom: 10px;
 }
 
-.talk .info h3 {
+.talk .info .author {
     color: #999;
     font-size: 24px;
-    text-align: right;
     padding-bottom: 15px;
-    border-bottom: solid 1px #eee;
+    float: left;
+	padding-top: 15px;
 }
 
 .talk.current .info h3 {
@@ -192,11 +190,10 @@ header p a:hover {
 }
 
 .talk .info .location .room {
-    float: left;
+    float: right;
 }
 
 .talk .info .location .time {
-    float: right;
 }
 
 .talk .info .location .now {
@@ -215,7 +212,7 @@ header p a:hover {
 .talk .info .location .time,
 .talk .info .location .now,
 .talk .info .location .room {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
 }
@@ -239,5 +236,11 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.talk img {
+	border-radius: 57px;
+	border: 1px solid #999;
+    margin-top: -28px;
 }
 
