@@ -107,16 +107,24 @@ class GlobaisTalks(object):
 
         estande = Room(name='Estande Globo.com')
         lightning_talks = [
+                Talk(person=Person(name=u'Bernardo Heynemann',
+                    email="heynemann@gmail.com"),
+                    room=estande,
+                    title=u"Fazendo mais com menos em python",
+                    date=datetime.datetime(2012,7,27,14,00,00)),
+
                 Talk(person=Person(name=u'Diego Manhães',
                     email="diego@dmpinheiro.net"),
                     room=estande,
                     title=u"Otimização de aplicativos em Python",
-                    date=datetime.datetime(2012,7,27,14,00,00)),
+                    date=datetime.datetime(2012,7,27,15,00,00)),
+
                 Talk(person=Person(name=u'Leonardo Mello',
                     email="leonardo.rodrigues@corp.globo.com"),
                     room=estande,
                     title=u"Automatização de setup e gerenciamento de servidores",
                     date=datetime.datetime(2012,7,27,16,00,00)),
+
                 Talk(person=Person(name='Colin Saliceti',
                     email="colin@corp.globo.com"),
                     room=estande,
