@@ -111,7 +111,7 @@ class GlobaisTalks(object):
                     email="diego@dmpinheiro.net"),
                     room=estande,
                     title=u"Otimização de aplicativos em Python",
-                    date=datetime.datetime(2012,7,27,12,00,00)),
+                    date=datetime.datetime(2012,7,27,14,00,00)),
                 Talk(person=Person(name=u'Leonardo Mello',
                     email="leonardo.rodrigues@corp.globo.com"),
                     room=estande,
