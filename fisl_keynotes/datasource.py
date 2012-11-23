@@ -137,7 +137,7 @@ class GlobaisTalks(object):
                     date=datetime.datetime(2012,11,23,15,30,00)),
 
                 Talk(person=Person(name=u'Rafael Martins',
-                    email="rafael.martins@corp.globo.com"),
+                    email="rafael.mws@gmail.com"),
                     room=recife,
                     title=u"Construíndo uma API de dados esportivos que responde a 9.000 req/s",
                     date=datetime.datetime(2012,11,23,16,10,00)),
