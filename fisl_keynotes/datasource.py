@@ -105,41 +105,53 @@ class GlobaisTalks(object):
                 ('Juarez', 'juarez.bochi@corp.globo.com'),
                 ('motta', 'tiago.motta@corp.globo.com')]
 
-        estande = Room(name='Estande Globo.com')
+        rio = Room(name=u'Rio de Janeiro - Auditório')
+        brasilia = Room(name=u'Brasília')
+        recife = Room(name='Recife')
+        porto_alegre = Room(name='Porto Alegre')
+        sao_paulo = Room(name=u'São Paulo')
+
         lightning_talks = [
-                Talk(person=Person(name=u'Bernardo Heynemann',
+                Talk(person=Person(name=u'Rodrigo Senra',
+                    email=""),
+                    room=rio,
+                    title=u"Organicer: Organizando informação com Python",
+                    date=datetime.datetime(2012,11,23,10,40,00)),
+
+                Talk(person=Person(name=u'Bernardo Heynemann & Diogo Baeder',
                     email="heynemann@gmail.com"),
-                    room=estande,
-                    title=u"Fazendo mais com menos em python",
-                    date=datetime.datetime(2012,7,27,14,00,00)),
+                    room=brasilia,
+                    title=u"Provisionamento de Servidores THE DEV WAY",
+                    date=datetime.datetime(2012,11,23,10,40,00)),
 
-                Talk(person=Person(name=u'Diego Manhães',
-                    email="diego@dmpinheiro.net"),
-                    room=estande,
-                    title=u"Otimização de aplicativos em Python",
-                    date=datetime.datetime(2012,7,27,15,00,00)),
+                Talk(person=Person(name=u'Juarez Bochi & Hugo Tavares',
+                    email="juarez.bochi@corp.globo.com"),
+                    room=rio,
+                    title=u"Programação Funcional em Python",
+                    date=datetime.datetime(2012,11,23,11,20,00)),
 
-                Talk(person=Person(name=u'Leonardo Mello',
-                    email="leonardo.rodrigues@corp.globo.com"),
-                    room=estande,
-                    title=u"Automatização de setup e gerenciamento de servidores",
-                    date=datetime.datetime(2012,7,27,16,00,00)),
+                Talk(person=Person(name=u'Tatina Al-Chueyr',
+                    email="tatiana@corp.globo.com"),
+                    room=rio,
+                    title=u"Desenvolvimento de aplicações para Android com Python",
+                    date=datetime.datetime(2012,11,23,15,30,00)),
 
-                Talk(person=Person(name='Colin Saliceti',
-                    email="colin@corp.globo.com"),
-                    room=estande,
-                    title=u"Hot Deploy - Serviço contínuo",
-                    date=datetime.datetime(2012,7,27,17,00,00)),
+                Talk(person=Person(name=u'Rafael Martins',
+                    email="rafael.martins@corp.globo.com"),
+                    room=recife,
+                    title=u"Construíndo uma API de dados esportivos que responde a 9.000 req/s",
+                    date=datetime.datetime(2012,11,23,16,10,00)),
+
                 ]
-        global_talks = []
+        global_talks = lightning_talks
 
-        for glb in globais:
-            for person in fisl.find_person_by_name(*glb):
-                for t in fisl.find_talks_by_person(person):
-                    t.author = person
-                    global_talks.append(t)
+        #for glb in globais:
+            #for person in fisl.find_person_by_name(*glb):
+                #for t in fisl.find_talks_by_person(person):
+                    #t.author = person
+                    #global_talks.append(t)
 
-        global_talks.extend(lightning_talks)
+        #global_talks.extend(lightning_talks)
         global_talks = sorted(global_talks, key=lambda item: item.date)
         return global_talks
 
